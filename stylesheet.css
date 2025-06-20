@@ -1,0 +1,371 @@
+/* GENERAL */
+
+body {
+    margin: 0;
+    background-color: #647748;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.3;
+    overflow-x: hidden;
+}
+
+.page-container {
+    max-width: 1200px; /* Max width of content */
+    margin: 0 auto; /* Centers content horizontally */
+    width: 100%;
+}
+
+h1 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+  }
+
+/* --------------- HEADER --------------- */
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    top: 0; 
+    left: 0;
+    animation: slide-down 1.5s ease-out;
+}
+
+.logo{
+    /* background-color: blueviolet; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 2.5rem;
+    z-index: 3;
+}
+
+.logo a {
+    /* position: relative; */
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+/* Wave Animation */
+
+
+.custom-shape-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    transform: scaleY(-1); /* Flip wave vertically */
+}
+
+.wave-container {
+    display: flex;
+    width: 200%; /* Double width for infinite scroll effect */
+    animation: waveScroll 12s linear infinite; /* Infinite wave motion */
+    z-index: 2;
+}
+
+.wave-container svg {
+    width: 50%; /* Each wave is half the container */
+    height: 250px;
+}
+
+.shape-fill {
+    fill: url(#waveGradient); /* SVG gradient */
+}
+
+/* Wave scrolling animation */
+@keyframes waveScroll {
+    0% {
+        transform: translateX(0); /* Start position */
+    }
+    100% {
+        transform: translateX(-50%); /* Scroll half way */
+    }
+}
+
+
+/* --------------- MAIN CONTENT --------------- */
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    height: 100vh;
+    gap: 30px;
+    animation: riseUp 1.5s ease-out;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;      /* Always row */
+    flex-wrap: nowrap;        /* No wrap on large screens */
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+.options h3 { 
+    border-radius: 30px;
+    padding: 20px 30px;
+    margin: 5px;
+    text-align: center;
+    width: 150px;             /* Keep them narrow on big screens */
+    transition: all 0.4s ease;
+    background-color:  rgba(255, 255, 255, 0.352); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.521);
+    z-index: 2;
+    cursor: pointer;
+}
+
+
+.options h3:hover {
+    background-color: rgba(255, 255, 255, 0.352);
+    box-shadow: none;
+}
+
+.options h3:active {
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(1px);
+    background-color: #4c5a37;
+}
+
+
+
+/* Small screens */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        height: auto;
+        margin-top: 200px;
+        padding: 20px 0;
+    }
+
+    .options {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;  /* space around items */
+        gap: 10px;
+        width: 100%; /* Make sure options take full width */
+    }
+
+    .options h3 {
+        width: 45%;  /* two per row */
+        margin: 5px 0; /* vertical margin for breathing room */
+        box-sizing: border-box; /* Include padding and border in width */
+    }
+}
+
+/* --------------- OPTIONS CONTENT --------------- */
+
+.options-content {
+    position: relative;
+    background-color: #4c5a37;
+    border-radius: 30px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+    width: 80%;
+    height: 400px;
+    padding: 30px;
+    overflow: hidden;
+}
+
+/* Default hidden state */
+.aboutme-content,
+.skills-content,
+.portfolio-content,
+.contacts-content {
+    display: none;
+}
+
+/* Only display when active */
+.aboutme-content.active {
+    display: block;
+}
+
+.skills-content.active {
+    display: block;
+    flex-direction: column;
+    color: white;
+}
+
+.portfolio-content.active {
+    display: block;
+}
+
+.contacts-content.active {
+    display: block;
+}
+
+.aboutme-content{
+    position: absolute;
+    color: white;
+    font-size: 1.2rem;
+    animation: riseUp 1.5s ease-out;
+}
+
+.skills-content {
+    position: absolute;
+    font-size: 1.2rem;
+    color: white;
+    animation: riseUp 1.5s ease-out;
+}
+
+.skill-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.2rem;
+}
+
+
+.portfolio-content{
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    animation: riseUp 1.5s ease-out;
+}
+
+.contacts-content {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    animation: riseUp 1.5s ease-out;
+}
+
+/* --------------- EXTRAS WINDOW --------------- */
+
+.container-styles {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 20px;
+    right: 20px;
+    background-color:  rgba(255, 255, 255, 0.352); 
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.521);
+    z-index: 2;
+    animation: riseUp 1.5s ease-out;
+    
+}
+
+/* Optional label */
+.trythis {
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.3em;
+    color: black;
+}
+
+/* Buttons row */
+.trythis-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+/* Basic button styling */
+.trythis-btn button {
+    border: none;
+    padding: 8px 16px;
+    background-color: #e0e0e0;
+    color: black;
+    border: 2px solid #666;
+    border-radius: 6px;
+    box-shadow: inset -2px -2px 0 #aaa, inset 2px 2px 0 #fff;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;   
+}
+
+.trythis-btn button:hover {
+    background-color: #d0d0d0;
+  }
+
+.trythis-btn button:active {
+    box-shadow: inset 2px 2px 4px #666;
+    transform: translateY(1px);
+}
+
+/* ------------- AnimationFrames  & ScrollBar ------------- */
+
+@keyframes riseUp {
+    0% {
+        transform: translateY(100px); /* Start from 100px below */
+        opacity: 0; /* Start with no opacity */
+    }
+    100% {
+        transform: translateY(0); /* End at original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+
+/* --------------- BUBBLES --------------- */
+
+.container-bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bubble{
+    position: absolute;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(213, 216, 198, 0.402);
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.265);
+    animation: floatUp 8s linear infinite;
+    z-index: -5;
+    
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+    }
+}

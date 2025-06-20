@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AV Portfolio</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script src="script.js" defer></script>
+        <!-- Font Awesome CDN (version 6) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+
+    <body>
+        <section class="page-container">
+
+            <!-- === Header with Logo, Navbar, and Wave Background === -->
+            <header class="header">
+
+                <!-- Logo -->
+                <h1 class="logo">AV</h1>
+
+                <!-- SVG wave background -->
+                <div class="custom-shape-wave">
+                    <div class="wave-container">
+                        <!-- Repeating SVGs for animation effect -->
+                        <svg viewBox="0 0 1200 150" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#ffffff00" />
+                                    <stop offset="100%" stop-color="#ffffff" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M0,50 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,150 L0,150 Z"
+                                fill="url(#waveGradient)" />
+                        </svg>
+
+                        <!-- Second wave for layering or animation loop -->
+                        <svg viewBox="0 0 1200 150" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#ffffff00" />
+                                    <stop offset="100%" stop-color="#ffffff" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M0,50 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,150 L0,150 Z"
+                                fill="url(#waveGradient)" />
+                        </svg>
+                    </div>
+                </div>
+            </header>
+
+
+            <section class="main-content" id="main-content">
+                <section class="options" id="options">
+                    <h3 class="aboutme-btn">ABOUT ME</h3>
+                    <h3 class="skills-btn">SKILLS</h3>
+                    <h3 class="portfolio-btn">PORTFOLIO</h3>
+                    <h3 class="contacts-btn">CONTACTS</h3>
+                </section>
+                <div class="options-content">
+                    <section class="aboutme-content">
+                        <p>👋 Hi, I’m Ana <br><br> I am learning front-end development. I’ve been
+                            building my own projects and learning how to create clean,
+                            user-friendly interfaces. <br><br> I bring a strong eye for detail,
+                            problem-solving skills, and a genuine interest in building things
+                            that work well and look good.</p>
+                    </section>
+                    <section class="skills-content">
+                        <div class="skill-row">
+                            <i class="fab fa-html5"></i>
+                            <p>HTML</p>
+                        </div>
+                        <div class="skill-row">
+                            <i class="fab fa-css3-alt"></i>
+                            <p>CSS</p>
+                        </div>
+                        <div class="skill-row">
+                            <i class="fa-brands fa-js"></i>
+                            <p>JAVASCRIPT</p>
+                        </div>
+                        <div class="skill-row">
+                            <i class="fa-brands fa-react"></i>
+                            <p>REACT</p>
+                        </div>
+                        <div class="skill-row">
+                            <i class="fa-brands fa-github"></i>
+                            <p>GIT/GITHUB</p>
+                        </div>
+                        <div class="skill-row">
+                            <i class="fa-solid fa-fire-flame-curved"></i>
+                            <p>FIREBASE</p>
+                        </div>
+                    </section>
+                    <section class="portfolio-content">
+                        <p>Coming Soon</p>
+                    </section>
+                    <section class="contacts-content">
+                        <p>Coming Soon</p>
+                    </section>
+                </div>
+            </section>
+
+            <!-- === Theme Buttons === -->
+            <div class="container-styles" id="styles">
+
+                <!-- Try This image with arrow -->
+                <p class="trythis">TRY THIS</p>             
+                <!-- Floating style/theme option buttons -->
+                <div class="trythis-btn">
+                    <button onclick="CallLotsOfBubblies()">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                </div>
+            </div>
+            <!-- Where the bubbles will be inserted dynamically -->
+            <div class="container-bubbles"></div>
+        </section>
+    </body>
+</html>
