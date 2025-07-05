@@ -14,6 +14,9 @@
     <body>
         <section class="page-container">
 
+            <!-- 3D object -->
+             <div id="container3D" class="container3D"></div>
+
             <!-- === Header with Logo, Navbar, and Wave Background === -->
             <header class="header">
 
@@ -53,50 +56,87 @@
 
             <section class="main-content" id="main-content">
                 <section class="options" id="options">
-                    <h3 class="aboutme-btn">ABOUT ME</h3>
-                    <h3 class="skills-btn">SKILLS</h3>
-                    <h3 class="portfolio-btn">PORTFOLIO</h3>
-                    <h3 class="contacts-btn">CONTACTS</h3>
+                    <h2 class="aboutme-btn">ABOUT ME</h2>
+                    <h2 class="skills-btn">SKILLS</h2>
+                    <h2 class="portfolio-btn">PORTFOLIO</h2>
+                    <h2 class="contacts-btn">CONTACTS</h2>
                 </section>
                 <div class="options-content">
                     <section class="aboutme-content">
-                        <p>👋 Hi, I’m Ana <br><br> I am learning front-end development. I’ve been
-                            building my own projects and learning how to create clean,
-                            user-friendly interfaces. <br><br> I bring a strong eye for detail,
-                            problem-solving skills, and a genuine interest in building things
-                            that work well and look good.</p>
+                        <p>👋 Hi, I’m <strong>Ana</strong>. <br><br>
+                            <strong>Front-End / Full-Stack Developer.</strong> <br><br>
+                            Currently developing my own projects to learn how to create clean, 
+                            user-friendly interfaces. <br><br>
+                            I bring strong attention to detail, problem-solving skills, and a 
+                            genuine interest in building products that are useful, work well, 
+                            and are aesthetically pleasing.<br><br>
+                            🌐 Lisbon, Portugal.
+                        </p>
                     </section>
                     <section class="skills-content">
-                        <div class="skill-row">
-                            <i class="fab fa-html5"></i>
-                            <p>HTML</p>
-                        </div>
-                        <div class="skill-row">
-                            <i class="fab fa-css3-alt"></i>
-                            <p>CSS</p>
-                        </div>
-                        <div class="skill-row">
-                            <i class="fa-brands fa-js"></i>
-                            <p>JAVASCRIPT</p>
-                        </div>
-                        <div class="skill-row">
-                            <i class="fa-brands fa-react"></i>
-                            <p>REACT</p>
-                        </div>
-                        <div class="skill-row">
-                            <i class="fa-brands fa-github"></i>
-                            <p>GIT/GITHUB</p>
-                        </div>
-                        <div class="skill-row">
-                            <i class="fa-solid fa-fire-flame-curved"></i>
-                            <p>FIREBASE</p>
+                        <div class="skills-columns">
+
+                            <!-- Languages Column -->
+                            <div class="skills-column">
+                                <h3>Languages</h3>
+                                <div class="skill-row">
+                                    <i class="fab fa-html5"></i>
+                                    <p>HTML</p>
+                                </div>
+                                <div class="skill-row">
+                                    <i class="fab fa-css3-alt"></i>
+                                    <p>CSS</p>
+                                </div>
+                                <div class="skill-row">
+                                    <i class="fa-brands fa-js"></i>
+                                    <p>JavaScript</p>
+                                </div>
+                            </div>
+
+                            <!-- Libraries/Tools Column -->
+                            <div class="skills-column">
+                                <h3>Libraries</h3>
+                                <div class="skill-row">
+                                    <i class="fa-brands fa-react"></i>
+                                    <p>React</p>
+                                </div>
+                            </div>
+
+                            <!-- Extras Column -->
+                            <div class="skills-column">
+                                <h3>Extras</h3>
+                                <div class="skill-row">
+                                    <i class="fa-solid fa-fire-flame-curved"></i>
+                                    <p>Firebase</p>
+                                </div>
+                                <div class="skill-row">
+                                    <i class="fa-brands fa-github"></i>
+                                    <p>Git / GitHub</p>
+                                </div>
+                            </div>
+
                         </div>
                     </section>
+
                     <section class="portfolio-content">
                         <p>Coming Soon</p>
                     </section>
                     <section class="contacts-content">
-                        <p>Coming Soon</p>
+                        <h2>Let's Connect</h2>
+                            <div class="contacts-column">
+                                <div class="contacts-row">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <a>av.devprojects@gmail.com</a>
+                                </div>
+                                <div class="contacts-row">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                    <a href="https://www.linkedin.com/in/anavasconcelos95/" target="_blank">LinkedIn/AV</a>
+                                </div>
+                                <div class="contacts-row">
+                                    <i class="fa-brands fa-github"></i>
+                                    <a href="https://github.com/av-devprojects" target="_blank">GitHub/AV</a>
+                                </div>
+                            </div>
                     </section>
                 </div>
             </section>
@@ -105,7 +145,7 @@
             <div class="container-styles" id="styles">
 
                 <!-- Try This image with arrow -->
-                <p class="trythis">TRY THIS</p>             
+                <p class="trythis">TRY THIS 😁</p>             
                 <!-- Floating style/theme option buttons -->
                 <div class="trythis-btn">
                     <button onclick="CallLotsOfBubblies()">1</button>
