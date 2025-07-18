@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Bubbles Script
 
-const container = document.querySelector('.container-bubbles');
+const containerB = document.querySelector('.container-bubbles');
 
 function createBubble() {
     const bubble = document.createElement('div');
@@ -48,7 +48,7 @@ function createBubble() {
     bubble.style.height = bubble.style.width;
     bubble.style.animationDuration = `${6 + Math.random() * 4}s`;
     
-    container.appendChild(bubble);
+    containerB.appendChild(bubble);
 }
 
 function CallLotsOfBubblies()
@@ -56,6 +56,99 @@ function CallLotsOfBubblies()
     setInterval(createBubble, 1000);
 }
 
+
+// Stars Script
+
+const containerS = document.querySelector('.container-stars');
+
+function createStars() {
+    const stars = document.createElement('div');
+    stars.classList.add('stars');
+
+    const p = document.createElement('p');
+    p.innerText = '*';
+    stars.appendChild(p); // This places the <p> inside the <div>
+
+    stars.style.left = `${Math.random() * 100}%`;
+    stars.style.top = '0';
+
+    const size = 10 + Math.random() * 20;
+    stars.style.width = `${size}px`;
+    stars.style.height = `${size}px`;
+
+    const duration = 6 + Math.random() * 8;
+    stars.style.animationDuration = `${duration}s`;
+
+    containerS.appendChild(stars);
+
+    setTimeout(() => {
+        stars.remove();
+    }, duration * 1000);
+}
+
+function CallLotsOfStars() {
+    setInterval(createStars, 1000);
+}
+
+
+// JellyFish Script
+
+const containerJ = document.querySelector('.container-jellyfish');
+
+function createJellyfish() {
+    const jellyfish = document.createElement('div');
+    jellyfish.classList.add('jellyfish');
+
+    // Create body
+    const jellyfishBody = document.createElement('div');
+    jellyfishBody.classList.add('jellyfishBody');
+    jellyfish.appendChild(jellyfishBody);
+
+    // Create trails
+    const jellyfishTrails = document.createElement('div');
+    jellyfishTrails.classList.add('jellyfishTrails');
+
+    const trails = ['≋≋≋≋', '≋≋≋≋≋', '≋≋≋≋'];
+    trails.forEach(t => {
+        const trail = document.createElement('p');
+        trail.innerText = t;
+        jellyfishTrails.appendChild(trail);
+    });
+
+    jellyfish.appendChild(jellyfishTrails);
+
+    // 🎯 Start from random horizontal position at bottom of screen
+    jellyfish.style.left = `${Math.random() * 90}vw`;
+    jellyfish.style.top = `100vh`;
+
+    const size = 40 + Math.random() * 20;
+    jellyfish.style.width = `${size}px`;
+    jellyfish.style.height = 'auto';
+
+    const duration = 6 + Math.random() * 4;
+    jellyfish.style.animation = `floatUp ${duration}s linear forwards`;
+
+    containerJ.appendChild(jellyfish);
+
+    // Fade in
+    requestAnimationFrame(() => {
+        jellyfish.classList.add('show');
+    });
+
+    // Fade out before removing
+    setTimeout(() => {
+        jellyfish.classList.remove('show');
+
+        setTimeout(() => {
+            jellyfish.remove();
+        }, 1200); // fade-out duration
+    }, duration * 1000);
+}
+
+// Start spawning jellyfish every second
+function CallLotsOfJellyFish() {
+    setInterval(createJellyfish, 1000);
+}
 
 
 

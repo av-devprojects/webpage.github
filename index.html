@@ -7,7 +7,7 @@
         <title>AV Portfolio</title>
         <link rel="stylesheet" href="stylesheet.css">
         <script src="script.js" defer></script>
-        <script src="script3d.js" defer></script>
+        <script type="module" src="script3d.js" defer></script>
         <!-- Font Awesome CDN (version 6) -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
@@ -150,12 +150,18 @@
                 <!-- Floating style/theme option buttons -->
                 <div class="trythis-btn">
                     <button onclick="CallLotsOfBubblies()">1</button>
-                    <button>2</button>
-                    <button>3</button>
+                    <button onclick="CallLotsOfStars()">2</button>
+                    <button onclick="CallLotsOfJellyFish()">3</button>
                 </div>
             </div>
             <!-- Where the bubbles will be inserted dynamically -->
             <div class="container-bubbles"></div>
+            <!-- Where the stars will be inserted dynamically -->
+            <div class="container-stars"></div>
+            <!-- Where the fish will be inserted dynamically -->
+            <div class="container-jellyfish"></div>
+
+
         </section>
     </body>
 </html>
