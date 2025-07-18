@@ -47,15 +47,20 @@ function createBubble() {
     bubble.style.width = `${10 + Math.random() * 20}px`;
     bubble.style.height = bubble.style.width;
     bubble.style.animationDuration = `${6 + Math.random() * 4}s`;
-    
+
     containerB.appendChild(bubble);
 }
 
-function CallLotsOfBubblies()
-{
-    setInterval(createBubble, 1000);
+// Start bubbles and stop after 20 seconds
+function CallLotsOfBubblies() {
+    const bubbleInterval = setInterval(createBubble, 1000);
+
+    setTimeout(() => {
+        clearInterval(bubbleInterval); // stop bubbles after 20 sec
+    }, 20000);
 }
 
+// -----------------------------
 
 // Stars Script
 
@@ -81,15 +86,22 @@ function createStars() {
 
     containerS.appendChild(stars);
 
+    // Remove stars after their animation finishes
     setTimeout(() => {
         stars.remove();
     }, duration * 1000);
 }
 
+// Start stars and stop after 20 seconds
 function CallLotsOfStars() {
-    setInterval(createStars, 1000);
+    const starsInterval = setInterval(createStars, 1000);
+
+    setTimeout(() => {
+        clearInterval(starsInterval); // stop stars after 20 sec
+    }, 20000);
 }
 
+// -----------------------------
 
 // JellyFish Script
 
@@ -99,12 +111,12 @@ function createJellyfish() {
     const jellyfish = document.createElement('div');
     jellyfish.classList.add('jellyfish');
 
-    // Create body
+    // Jellyfish Body
     const jellyfishBody = document.createElement('div');
     jellyfishBody.classList.add('jellyfishBody');
     jellyfish.appendChild(jellyfishBody);
 
-    // Create trails
+    // Jellyfish Trails
     const jellyfishTrails = document.createElement('div');
     jellyfishTrails.classList.add('jellyfishTrails');
 
@@ -117,7 +129,7 @@ function createJellyfish() {
 
     jellyfish.appendChild(jellyfishTrails);
 
-    // 🎯 Start from random horizontal position at bottom of screen
+    // Random horizontal start, from bottom
     jellyfish.style.left = `${Math.random() * 90}vw`;
     jellyfish.style.top = `100vh`;
 
@@ -130,25 +142,29 @@ function createJellyfish() {
 
     containerJ.appendChild(jellyfish);
 
-    // Fade in
+    // Fade in effect
     requestAnimationFrame(() => {
         jellyfish.classList.add('show');
     });
 
-    // Fade out before removing
+    // Fade out and remove after animation
     setTimeout(() => {
         jellyfish.classList.remove('show');
-
         setTimeout(() => {
             jellyfish.remove();
         }, 1200); // fade-out duration
     }, duration * 1000);
 }
 
-// Start spawning jellyfish every second
+// Start jellyfish and stop after 20 seconds
 function CallLotsOfJellyFish() {
-    setInterval(createJellyfish, 1000);
+    const jellyfishInterval = setInterval(createJellyfish, 1000);
+
+    setTimeout(() => {
+        clearInterval(jellyfishInterval); // stop jellyfish after 20 sec
+    }, 20000);
 }
+
 
 
 
